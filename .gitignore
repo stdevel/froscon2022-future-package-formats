@@ -1,0 +1,7 @@
+node_modules
+out
+vendor
+*.swp
+.idea
+presentation.*
+.vagrant

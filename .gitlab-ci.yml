@@ -1,0 +1,162 @@
+stages:
+  - quality check
+  - html
+  - pdf
+  - collect
+
+
+linting:
+  stage: quality check
+  image:
+    name: stdevel/simple-linter
+    entrypoint: [""]
+  script:
+    - /entrypoint.py . -E ./build.py
+  allow_failure: true
+
+
+css lint:
+  stage: quality check
+  image: pipelinecomponents/stylelint
+  script:
+    - stylelint --color 'css/*.css'
+  allow_failure: true
+  rules:
+    - if: '$CI_PROJECT_NAME == "template-remarkjs"'
+
+
+pylint:
+  stage: quality check
+  image: python:3
+  script:
+    - pip install pylint
+    - pylint build.py tools/lab
+  allow_failure: true
+  rules:
+    - if: '$CI_PROJECT_NAME == "template-remarkjs"'
+
+
+flake8:
+  stage: quality check
+  image: python:3
+  script:
+    - pip install flake8
+    - flake8 build.py tools/lab
+  allow_failure: true
+  rules:
+    - if: '$CI_PROJECT_NAME == "template-remarkjs"'
+
+
+render html:
+  stage: html
+  needs: []
+  image:
+    name: python:alpine
+  script:
+    - python build.py
+  artifacts:
+    paths:
+      - presentation.html
+
+
+build presentation:
+  stage: pdf
+  image:
+    name: astefanutti/decktape
+    entrypoint: [""]
+  script:
+    - node /decktape/decktape.js --chrome-path chromium-browser --chrome-arg=--no-sandbox --chrome-arg=--disable-web-security remark presentation.html presentation.pdf
+  artifacts:
+    paths:
+      - presentation.pdf
+      - presentation.html
+
+
+build handout:
+  stage: pdf
+  dependencies: []
+  image:
+    name: pistatium/markdown-pdf
+  script:
+    - markdown-pdf -o handout.pdf handout.md
+  artifacts:
+    paths:
+      - handout.pdf
+  rules:
+    - exists:
+        - handout.md
+
+
+build lab guide:
+  stage: pdf
+  dependencies: []
+  image:
+    name: pistatium/markdown-pdf
+  script:
+    - markdown-pdf -o labs.pdf labs.md
+  artifacts:
+    paths:
+      - labs.pdf
+  rules:
+    - exists:
+        - labs.md
+
+
+.collect files template: &collect-files-template
+  stage: collect
+  image: alpine
+  script:
+    - echo "Collecting files..."
+
+
+collect files:
+  <<: *collect-files-template
+  artifacts:
+    name: "$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG"
+    paths:
+      - css/
+      - imgs/
+      - assets/
+      - remark-latest.min.js
+      - presentation.html
+      - ./*.pdf
+  except:
+    - tags
+
+
+create release:
+  <<: *collect-files-template
+  artifacts:
+    expire_in: never
+    name: "$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG"
+    paths:
+      - css/
+      - imgs/
+      - tools/lab
+      - .gitlab-ci.yml
+      - .markdownlint.yml
+      - remark-latest.min.js
+      - README.md
+      - build.py
+      - settings.ini
+      - template.html
+      - labs.md
+      - handout.md
+  rules:
+    - if: '$CI_PROJECT_NAME == "template-remarkjs" && $CI_COMMIT_TAG'
+
+create upgrade archive:
+  <<: *collect-files-template
+  artifacts:
+    name: "$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG-upgrade"
+    paths:
+      - css/
+      - imgs/
+      - tools/lab
+      - .gitlab-ci.yml
+      - remark-latest.min.js
+      - settings.ini
+      - template.html
+      - build.py
+  rules:
+    - if: '$CI_PROJECT_NAME == "template-remarkjs" && $CI_COMMIT_TAG'
