@@ -1,4 +1,5 @@
 class: center, middle
+name: outro
 
 # Ausblick
 
@@ -12,7 +13,10 @@ class: center, middle
 
 ## Links
 
-- TODO
+- [AppImageHub](https://appimage.github.io/apps/)
+- [Flathub](https://flathub.org/)
+- [Snapcraft](https://snapcraft.io/)
+- [Interview mit Simon Peter](https://itsfoss.com/appimage-interview)
 
 ---
 

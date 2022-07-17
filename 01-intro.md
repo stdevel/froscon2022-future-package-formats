@@ -15,11 +15,11 @@ Notes for the _first_ slide!
 .left-column[
 
 - Christian Stankowic
-- Linux, Virtualisierung, Automatisierung
+- Linux, Virtualisierung, IaC
 - Every Linux is awesome!.red[*]
 - [@stankowic_devel](https://twitter.com/stankowic_devel) auf Twitter
-- [stdevel](https://github.com/stdevel) auf GitHub
 - Blog: [https://cstan.io](https://cstan.io)
+- 🎙️: [FOCUS On: Linux](https://ageofdevops.de/feed/podcast/fol)
 
 .footnote[.red[*] außer [Hannah Montana Linux](http://hannahmontana.sourceforge.net/)]
 
@@ -33,4 +33,10 @@ Notes for the _first_ slide!
 
 ---
 
-{{ agenda }}
+# Agenda
+
+- [Motivation und Überblick](#motivation)
+- [AppImage](#appimage)
+- [Flatpak](#flatpak)
+- [Snapcraft](#snapcraft)
+- [Ausblick](#outro)
