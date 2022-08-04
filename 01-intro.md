@@ -39,5 +39,5 @@ Notes for the _first_ slide!
 - [Motivation und Überblick](#motivation)
 - [AppImage](#appimage)
 - [Flatpak](#flatpak)
-- [Snapcraft](#snap)
+- [Snapcraft](#snapcraft)
 - [Ausblick](#outro)
