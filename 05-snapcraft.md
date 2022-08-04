@@ -138,7 +138,7 @@ name: snapcraft
 
 - Canonical und Mozilla haben Snaps überarbeitet
   - Firefox lädt nur noch benötigte Übersetzungen herunter
-  - GTK-Snaps nutzen nun LZO statt XZ.red[*]
+  - GTK-Snaps nutzen nun **LZO** statt XZ.red[*]
 --
 
 - Weitere geplante Optimierungen:

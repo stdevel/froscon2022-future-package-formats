@@ -28,7 +28,7 @@ class: small
 ## Fazit
 
 - AppImage ist für Desktop-Apps die **schlankste** und einfachste Lösung
-- Flatpaks integrieren sich hervorragend in **Software-Shops**
+- Flatpaks sind weit verbreitet, integrieren sich in **Software-Shops**
 - Snapcraft kämpft mit technischen Details und Akzeptanz
 - Canonical hätte **proaktiver**/schneller auf Feedback eingehen müssen
 - Quelloffen + Dezentral > Proprietäre Shops
@@ -42,8 +42,12 @@ class: small
 - [AppImage-Wiki zur Paketierung](https://github.com/AppImage/AppImageKit/wiki/Creating-AppImages)
 - [AppImageHub](https://appimage.github.io/apps/)
 - [Interview mit Simon Peter](https://itsfoss.com/appimage-interview)
+- [SUSECON 2017-Vortrag über AppImage](https://speakerdeck.com/probonopd/opensuse-conference-2017-obs-b-appimage)
 - [Flathub](https://flathub.org/)
+- [Flatpak-Dokumentation](https://docs.flatpak.org/en/latest/)
 - [Snapcraft](https://snapcraft.io/)
+- [Snapcraft-Dokumentation](https://snapcraft.io/docs)
+- [Snap Hello World](https://snapcraft.io/first-snap)
 
 ---
 
