@@ -32,6 +32,7 @@ class: small
 - Snapcraft kämpft mit technischen Details und Akzeptanz
 - Canonical hätte **proaktiver**/schneller auf Feedback eingehen müssen
 - Quelloffen + Dezentral > Proprietäre Shops
+- Umweg über Multipass/LXD unnötig **komplex**
 - Web-Browser sind kritische Anwendungen, die weiterhin vom Distributor ausgeliefert werden sollten
 
 ---

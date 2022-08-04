@@ -78,7 +78,11 @@ name: snapcraft
 - **`snapd`** - Hintergrunddienst, verwaltet Snaps automatisch
 - **Snap Store** - Online-Store, zentral, proprietär
 - **Snapcraft** - Framework/Anwendung zum Bauen von Anwendungen
-- **Channel** - Veröffentlichungskanal, z.B. `stable`, `edge`
+- **Channel** - Veröffentlichungskanal: `<track>/<risk>/<branch>`
+  - `track`: ein unterstütztes Release, z.B. `latest`, `insider`
+  - `risk`: Stabilität; `stable`, `candidate`, `beta` oder `edge`
+  - `branch`: Entwicklungszweig; z.B. `fix-bug-1337`
+  - Beispiele: `latest/stable`, `insider/edge`
 
 ---
 
@@ -148,5 +152,58 @@ name: snapcraft
 
 ## Snap-Pakete erstellen
 
-- TODO: yaml-dokument
-- TODO: core runtime
+- Metadaten werden in **YAML**-Datei definiert
+  - Name des Pakets
+  - Version und Beschriebung
+  - Berechtigungsmodell (`strict`, `devmode`, `classic`)
+- Erfordert installiertes [Multipass](https://multipass.run/).red[*]
+  - erstellt Ubuntu VMs unter Linux, macOS und Windows
+- Erstellt eine `.snap`-Datei
+
+.footnote[.red[*] Poor man's [Vagrant](https://vagrantup.com)]
+
+---
+
+class: small
+
+### Beispiel
+
+```yaml
+name: test-offlineimap-dummy
+version: '1.0'
+summary: OfflineIMAP
+description: |
+  OfflineIMAP is software that downloads your email mailbox(es) as local
+  Maildirs. OfflineIMAP will synchronize both sides via IMAP.
+confinement: devmode
+base: core18
+parts:
+  test-offlineimap-dummy:
+    plugin: python
+    python-version: python2
+    source: https://github.com/snapcraft-docs/offlineimap.git
+    stage-packages:
+      - python-six
+apps:
+  test-offlineimap-dummy:
+    command: bin/offlineimap
+```
+
+---
+
+### Beispiel
+
+Zur Erstellung muss die Datei `snapcraft.yaml` im einen sinnvoll benannten Unterordner liegen:
+
+```shell
+$ cd test-offlineimap-dummy
+$ snapcraft
+```
+
+Hierbei wird eine Ubuntu-Instanz via **LXD** gestartet.
+
+Die fertige Datei kann dann auf Systemen installiert werden:
+
+```shell
+# snap install --devmode --dangerous *.snap
+```
