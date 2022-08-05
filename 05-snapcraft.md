@@ -139,6 +139,7 @@ name: snapcraft
 - Canonical und Mozilla haben Snaps überarbeitet
   - Firefox lädt nur noch benötigte Übersetzungen herunter
   - GTK-Snaps nutzen nun **LZO** statt XZ.red[*]
+- ==> **50%** [schnellere Kaltstarts](https://ubuntu.com//blog/improving-firefox-snap-performance-part-3) auf RPi, **29-42%** auf x86
 --
 
 - Weitere geplante Optimierungen:
