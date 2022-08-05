@@ -45,6 +45,7 @@ class: small
 - [SUSECON 2017-Vortrag über AppImage](https://speakerdeck.com/probonopd/opensuse-conference-2017-obs-b-appimage)
 - [Flathub](https://flathub.org/)
 - [Flatpak-Dokumentation](https://docs.flatpak.org/en/latest/)
+- [Flatpak-Tutorial](https://docs.flatpak.org/en/latest/first-build.html)
 - [Snapcraft](https://snapcraft.io/)
 - [Snapcraft-Dokumentation](https://snapcraft.io/docs)
 - [Snap Hello World](https://snapcraft.io/first-snap)

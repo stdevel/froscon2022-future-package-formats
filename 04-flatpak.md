@@ -94,8 +94,146 @@ class: small, center, middle
 
 ## Flatpak erstellen
 
-- TODO: SDK
-- TODO: Beispiel
+- SDK mit `flatpak-builder` benötigt
+  - kann via Flatpak installiert werden
+- **YAML**-Manifest definiert Quellen (u.a. `archive`, `git`, `file`, `patch`) und Build-Module
+- u.a. [unterstützte Buildsysteme](https://docs.flatpak.org/en/latest/manifests.html?highlight=buildsystem#supported-build-systems):
+  - `autotools`, `cmake`, `meson`, `qmake`,...
+--
 
-- TODO
-- TODO
+- Erstellen und **Testen** des Pakets
+- Paket in **Repository** hinterlegen
+- Repository zu lokalen Quellen hinzufügen und Paket **installieren**
+
+---
+
+### Beispiel
+
+Installieren des SDK:
+
+```shell
+$ flatpak install org.freedesktop.Sdk
+```
+
+Erstellen der Anwendung und des Manifests:
+
+`hello.sh`:
+
+```shell
+#!/bin/sh
+echo "Ohai FrOSCon"
+```
+
+---
+
+### Beispiel
+
+`org.flatpak.Hello.yml`:
+
+```yaml
+app-id: org.flatpak.Hello
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+command: hello.sh
+modules:
+  - name: hello
+    buildsystem: simple
+    build-commands:
+      - install -D hello.sh /app/bin/hello.sh
+    sources:
+      - type: file
+        path: hello.sh
+```
+
+---
+
+class: small
+
+### Beispiel
+
+Erstellen des Pakets:
+
+```shell
+$ flatpak-builder build-dir org.flatpak.Hello.yml
+Downloading sources
+Initializing build dir
+Committing stage init to cache
+Starting build of org.flatpak.Hello
+========================================================================
+Building module hello in /home/cstankow/Dokumente/Lab/Flatpak/.flatpak-builder/build/hello-1
+========================================================================
+Running: install -D hello.sh /app/bin/hello.sh
+Committing stage build-hello to cache
+Cleaning up
+Committing stage cleanup to cache
+Finishing app
+Please review the exported files and the metadata
+Committing stage finish to cache
+Pruning cache
+```
+
+---
+
+### Beispiel
+
+Anschließend existiert ein neuer Ordner `build-dir`:
+
+```shell
+$ tree build-dir/
+build-dir/
+├── export
+├── files
+│   ├── bin
+│   │   └── hello.sh
+│   └── manifest.json
+├── metadata
+└── var
+    ├── lib
+    ├── run -> /run
+    └── tmp
+```
+
+---
+
+### Beispiel
+
+Testen der Anwendung:
+
+```shell
+$ flatpak-builder --user --install --force-clean build-dir org.flatpak.Hello.yml
+Emptying app dir 'build-dir'
+Downloading sources
+Starting build of org.flatpak.Hello
+...
+Installing app/org.flatpak.Hello/x86_64/master
+Pruning cache
+```
+
+```shell
+$ flatpak run org.flatpak.Hello
+Ohai FrOSCon
+```
+
+---
+
+### Beispiel
+
+Anwendung in Repository veröffentlichen:
+
+```shell
+$ flatpak-builder --repo=repo --force-clean build-dir org.flatpak.Hello.yml
+...
+Exporting org.flatpak.Hello to repo
+Commit: 3217d6e09036fbd0165014daae6fc3c8ead90868294d2d56e57a633714829fe4
+```
+
+Repository einhängen und Anwendung installieren:
+
+```shell
+$ flatpak --user remote-add --no-gpg-verify tutorial-repo repo
+$ flatpak --user install tutorial-repo org.flatpak.Hello
+Installation complete.
+$ flatpak run org.flatpak.Hello 
+Ohai FrOSCon
+```
