@@ -37,7 +37,7 @@ name: snapcraft
   - auch Themes müssen dediziert verteilt werden
 - viele Anwendungen im **proprietären** [Snap Store](https://snapcraft.io/)
   - automatisches Testen der Apps auf Malware
-  - trotzdem gab es 2018 Apps mit Cryptominer
+  - trotzdem gab es [2018 Apps mit Cryptominer](https://itsfoss.com/snapstore-cryptocurrency-saga/)
 
 .footnote[.red[*] EPEL bietet [`snapd-selinux`](https://centos.pkgs.org/8/epel-x86_64/snapd-selinux-2.56.2-1.el8.noarch.rpm.html)]
 
@@ -88,14 +88,14 @@ name: snapcraft
 
 ## Neverending Story: Snap + Firefox
 
-- Canonical entschied sich ab Ubuntu 21.10 Firefox primär als Snap anzubieten
+- ab Ubuntu 21.10 liefert Ubuntu Firefox **primär** als Snap anzubieten
   - seit Ubuntu 22.04 wird Firefox **ausschließlich** als Snap angeboten
 - **Vorteil**: Mozilla paketiert Firefox, weniger Verantwortung für Canonical
 --
 
 - Nachteil: deutlich **langsamere** Firefox-Startzeiten
   - Kaltstart: 21s vs. 8s
-  - Normaler Start: 2.9s vs 8.5s
+  - Normaler Start: 8.5s vs 2.9s
   - Jetstream2-Benchmark: 64.804 vs 67.563
 
 .footnote[.red[*] getestet auf i7-8850H @ 2 vCPUs, 2 GB RAM; siehe auch [Blogpost](https://cstan.io/?p=13062)]
@@ -111,7 +111,7 @@ name: snapcraft
 
 .left-column75[
 
-- Canonical hat zunächst die [Entscheidung gerechtfertigt](https://ubuntu.com/blog/how-are-we-improving-firefox-snap-performance-part-1)
+- Canonical [rechtfertigte die Entscheidung](https://ubuntu.com/blog/how-are-we-improving-firefox-snap-performance-part-1)
   - zusätzliche Sicherheit durch weitere Sandbox
 - Paket entpackt beim ersten Start **alle 98** verfügbaren Sprachpakete
 - Es wurde die **XZ**-Kompression verwendet
@@ -194,7 +194,7 @@ apps:
 
 ### Beispiel
 
-Zur Erstellung muss die Datei `snapcraft.yaml` im einen sinnvoll benannten Unterordner liegen:
+Zur Erstellung muss die Datei `snapcraft.yaml` in einen sinnvoll benannten Unterordner liegen:
 
 ```shell
 $ cd test-offlineimap-dummy

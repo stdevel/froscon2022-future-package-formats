@@ -55,7 +55,7 @@ Zur Interaktion mit dem Paketformat stehen verschiedene **Parameter** bereit:
 
 ## AppImages verwalten
 
-- Da AppImages einfach heruntergeladen und ausgeführt werden, gibt es keine zentrale Verwaltung
+- Da AppImages einfach heruntergeladen und ausgeführt werden, gibt es keine **zentrale Verwaltung**
   - Philosophie: *one app = one file*
 
 Abhilfe schaffen:
@@ -129,13 +129,23 @@ Es gibt verschiedene Optionen:
 
 ## Open Build Service
 
+.left-column75[
+
 - empfohlen für Open Source-Projekte
-- Service zur automatisierten Erstellung/Verteilung von Paketen
-- **openSUSE Build Service**: für OSS-Projekte kostenlose Instanz
+- Service zur automatisierten Paket-Erstellung
+- **openSUSE Build Service**: für OSS kostenlose Instanz
   - kann auch [selbst gehostet](https://openbuildservice.org/download/) werden
 - **automatisches** Neubauen falls ebenfalls auf OBS gehostete Abhängigkeiten neue Versionen erstellen
 - **automatisches Signieren** mit User Key
 - bettet Update-Informationen ein um **Binärdelta-Updates** zu ermöglichen
+
+]
+
+.right-column25[
+
+![:img Open Build Service-Logo, 100%](imgs/obs.jpg)
+
+]
 
 ???
 
@@ -187,6 +197,8 @@ script:
 
 ### Beispiel: ZDoom
 
+Konvertieren des Pakets:
+
 ```shell
 $ pkg2appimage zdoom.yml
 ...
@@ -208,7 +220,11 @@ Success
 
 ---
 
+class: small
+
 ### Beispiel
+
+Entpacken einer Debian-Datei, Erstellen der Ordnerstruktur:
 
 ```shell
 $ mkdir leafpad ; cd $_
@@ -233,6 +249,8 @@ $ tree
 ---
 
 ### Beispiel
+
+Erstellen des Abbilds:
 
 ```shell
 $ cd ..
