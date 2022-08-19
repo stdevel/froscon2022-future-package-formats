@@ -37,6 +37,12 @@ class: small
 
 ---
 
+class: center, middle
+
+![:img Don't install your browser with snap, 50%](imgs/browser_snap.jpg)
+
+---
+
 ## Links
 
 - [AppImage-Wiki zur Paketierung](https://github.com/AppImage/AppImageKit/wiki/Creating-AppImages)
