@@ -161,7 +161,7 @@ name: snapcraft
   - erstellt Ubuntu VMs unter Linux, macOS und Windows
 - Erstellt eine `.snap`-Datei
 
-.footnote[.red[*] Poor man's [Vagrant](https://vagrantup.com)]
+.footnote[.red[*] Poor man's [Vagrant](https://vagrantup.com)?]
 
 ---
 

@@ -160,8 +160,6 @@ Es gibt verschiedene Optionen:
 - lädt Binärdateien von Debian-Repositories oder Webseiten herunter
 - führt **Skripte** aus, um Daten anzupassen
 - **erstellt** anschließend ein AppImage-Abbild
---
-
 - Konfiguration via **YAML**-Datei, fertige Vorlagen (**Recipes**) auf [GitHub](https://github.com/AppImage/pkg2appimage/tree/master/recipes)
 - erfordert Kenntnisse über die Struktur des Pakets
 
