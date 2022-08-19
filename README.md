@@ -1,3 +1,3 @@
-# wtfaq-centos
+# froscon2022-future-package-formats
 
-Frequently asked questions regarding the CentOS/RHEL split
+Talk about AppImage, Flatpak and Snapcraft
