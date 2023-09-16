@@ -197,7 +197,7 @@ apps:
 
 Zur Erstellung muss die Datei `snapcraft.yaml` in einen sinnvoll benannten Unterordner liegen:
 
-```shell
+```command
 $ cd test-offlineimap-dummy
 $ snapcraft
 ```
@@ -206,6 +206,6 @@ Hierbei wird eine Ubuntu-Instanz via **LXD** gestartet.
 
 Die fertige Datei kann dann auf Systemen installiert werden:
 
-```shell
+```command
 # snap install --devmode --dangerous *.snap
 ```
