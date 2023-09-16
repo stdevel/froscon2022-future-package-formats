@@ -21,7 +21,7 @@ Notes for the _first_ slide!
 - 🗒️: [https://cstan.io](https://cstan.io)
 - 🎙️: [FOCUS On: Linux](https://focusonlinux.podigee.io/)
 
-.footnote[.red[*] außer [Hannah Montana Linux](http://hannahmontana.sourceforge.net/)]
+.footnote[.red[*] auch [Hannah Montana Linux](http://hannahmontana.sourceforge.net/)]
 
 ]
 

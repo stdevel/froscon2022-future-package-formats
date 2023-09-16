@@ -70,7 +70,7 @@ Themen wie diese könnt ihr hier alle 2 Wochen hören:
 
 Verfügbar via:
 
-- [RSS](https://ageofdevops.de/feed/podcast/fol) / [fyyd](https://fyyd.de/podcast/focus-on-linux)
+- [RSS](https://focusonlinux.podigee.io/rssfeed) / [fyyd](https://fyyd.de/podcast/focus-on-linux)
 - [Apple Podcasts](https://podcasts.apple.com/us/podcast/focus-on-linux/id1606139089)
 - [Spotify](https://open.spotify.com/show/4Yj9EaidQuwEZL0NkAafzh)
 

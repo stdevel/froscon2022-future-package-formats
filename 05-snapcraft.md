@@ -93,10 +93,11 @@ name: snapcraft
 - **Vorteil**: Mozilla paketiert Firefox, weniger Verantwortung für Canonical
 --
 
-- Nachteil: deutlich **langsamere** Firefox-Startzeiten
+- Nachteil: deutlich **langsamere** Firefox-Startzeiten.red[*]
   - Kaltstart: 21s vs. 8s
   - Normaler Start: 8.5s vs 2.9s
   - Jetstream2-Benchmark: 64.804 vs 67.563
+  - inzwischen (**2023**) etwas besser geworden
 
 .footnote[.red[*] getestet auf i7-8850H @ 2 vCPUs, 2 GB RAM; siehe auch [Blogpost](https://cstan.io/?p=13062)]
 

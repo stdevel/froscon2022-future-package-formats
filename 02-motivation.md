@@ -104,7 +104,7 @@ class: small
 
 .left-column[
 
-- Linux ist für viele Entwickler:innen eine zu komplexe Plattform:
+- Linux ist für viele Entwickler:innen eine **zu komplexe** Plattform:
   - Die Auswahl an Linux-Distributionen ist groß
   - Zahlreiche Paket-Manager
   - Es gibt zu unterschiedliche Versionsstände
