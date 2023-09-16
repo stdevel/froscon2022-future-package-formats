@@ -35,10 +35,10 @@ name: flatpak
 .left-column75[
 
 - verwendet **OSTree**- oder OCI-Images
-- ca. 1700 Anwendungen auf [Flathub](https://flathub.org/)
+- ca. 2.300 Anwendungen auf [Flathub](https://flathub.org/)
   - **dezentrale** Stores vorhanden (elementaryOS, Pop!_OS)
 - Updates als neues Images
-- derzeit auf [33 Distributionen](https://flatpak.org/setup/) unterstützt
+- derzeit auf [36 Distributionen](https://flatpak.org/setup/) unterstützt
   - auf einigen schon vorinstalliert
 
 ]

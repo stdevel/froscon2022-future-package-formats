@@ -20,7 +20,7 @@ class: small
 | Format | SquashFS | OSTree/OCI | SquashFS |
 | Rechteverwaltung | Nein | Ja (XDG) | Ja (XDG, AppArmor) |
 | Store | [AppImageHub](https://appimage.github.io/apps/) | [Flathub](https://flathub.org/) | [Snapcraft](https://snapcraft.io/) |
-| Angebot | ca. 1.300 Apps | ca. 1.700 Apps | ¯\\_(ツ)_/¯ |
+| Angebot | ca. 1.400 Apps | ca. 2.300 Apps | ¯\\_(ツ)_/¯ |
 | Updates | Neues Image bzw. Binary Delta | Neues Image | Transaktionale Updates |
 
 ---

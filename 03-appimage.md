@@ -16,7 +16,7 @@ name: appimage
   - analog zu `.exe`, `.dmg` und PortableApps
 - SquashFS-Format.red[*], keine Sandbox-Umgebung
 - keine Rechteverwaltung
-- ca. **1.300** Anwendungen im zentralen [AppImageHub](https://appimage.github.io/apps/)
+- ca. **1.400** Anwendungen im zentralen [AppImageHub](https://appimage.github.io/apps/)
 
 .footnote[.red[*] v2, v1 [nutzte ISO](https://discourse.appimage.org/t/alter-appimage-v1-convert-to-v2/2546/2)]
 
