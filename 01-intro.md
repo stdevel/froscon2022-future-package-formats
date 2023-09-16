@@ -17,7 +17,6 @@ Notes for the _first_ slide!
 - Christian Stankowic
 - Linux, Virtualisierung, IaC
 - Every Linux is awesome!.red[*]
-- 🐦: [@stankowic_devel](https://twitter.com/stankowic_devel)
 - 🦣: [@stdevel@chaos.social](https://chaos.social/web/@stdevel)
 - 🗒️: [https://cstan.io](https://cstan.io)
 - 🎙️: [FOCUS On: Linux](https://focusonlinux.podigee.io/)
