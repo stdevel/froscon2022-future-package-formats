@@ -35,10 +35,10 @@ name: flatpak
 .left-column75[
 
 - verwendet **OSTree**- oder OCI-Images
-- ca. 1700 Anwendungen auf [Flathub](https://flathub.org/)
+- ca. 2.300 Anwendungen auf [Flathub](https://flathub.org/)
   - **dezentrale** Stores vorhanden (elementaryOS, Pop!_OS)
 - Updates als neues Images
-- derzeit auf [33 Distributionen](https://flatpak.org/setup/) unterstützt
+- derzeit auf [36 Distributionen](https://flatpak.org/setup/) unterstützt
   - auf einigen schon vorinstalliert
 
 ]
@@ -55,7 +55,7 @@ name: flatpak
 
 Flatpak-Runtime installieren:
 
-```shell
+```command
 # yum install flatpak
 # apt-get install flatpak
 # zypper install flatpak
@@ -64,13 +64,13 @@ Flatpak-Runtime installieren:
 
 Store hinzufügen:
 
-```shell
+```command
 $ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 Anwendungen installieren:
 
-```shell
+```command
 $ flatpak install flathub com.github.tchx84.Flatseal
 ```
 
@@ -111,7 +111,7 @@ class: small, center, middle
 
 Installieren des SDK:
 
-```shell
+```command
 $ flatpak install org.freedesktop.Sdk
 ```
 
@@ -121,7 +121,7 @@ Erstellen der Anwendung und des Manifests:
 
 ```shell
 #!/bin/sh
-echo "Ohai FrOSCon"
+echo "Ohai Kielux"
 ```
 
 ---
@@ -154,7 +154,7 @@ class: small
 
 Erstellen des Pakets:
 
-```shell
+```command
 $ flatpak-builder build-dir org.flatpak.Hello.yml
 Downloading sources
 Initializing build dir
@@ -179,7 +179,7 @@ Pruning cache
 
 Anschließend existiert ein neuer Ordner `build-dir`:
 
-```shell
+```command
 $ tree build-dir/
 build-dir/
 ├── export
@@ -200,7 +200,7 @@ build-dir/
 
 Testen der Anwendung:
 
-```shell
+```command
 $ flatpak-builder --user --install --force-clean build-dir org.flatpak.Hello.yml
 Emptying app dir 'build-dir'
 Downloading sources
@@ -210,9 +210,9 @@ Installing app/org.flatpak.Hello/x86_64/master
 Pruning cache
 ```
 
-```shell
+```command
 $ flatpak run org.flatpak.Hello
-Ohai FrOSCon
+Ohai Kielux
 ```
 
 ---
@@ -221,7 +221,7 @@ Ohai FrOSCon
 
 Anwendung in Repository veröffentlichen:
 
-```shell
+```command
 $ flatpak-builder --repo=repo --force-clean build-dir org.flatpak.Hello.yml
 ...
 Exporting org.flatpak.Hello to repo
@@ -230,10 +230,10 @@ Commit: 3217d6e09036fbd0165014daae6fc3c8ead90868294d2d56e57a633714829fe4
 
 Repository einhängen und Anwendung installieren:
 
-```shell
+```command
 $ flatpak --user remote-add --no-gpg-verify tutorial-repo repo
 $ flatpak --user install tutorial-repo org.flatpak.Hello
 Installation complete.
 $ flatpak run org.flatpak.Hello 
-Ohai FrOSCon
+Ohai Kielux
 ```

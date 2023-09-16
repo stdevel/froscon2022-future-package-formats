@@ -94,7 +94,7 @@ class: small
 | openSUSE Leap | ~3y (major), ~1y (SP) | 18m | RPM | 13k | Stabilität, Aktualität |
 | openSUSE Tumbleweed | Rolling Release | - | RPM | 14k | Bleeding Edge |
 | Arch | Rolling Release | - | PKG | 10k | Bleeding Edge
-| NixOS | ~6m | ~1y | Nix | ~71k | Bleeding Edge |
+| NixOS | ~6m | ~1y | Nix | ~80k+ | Bleeding Edge |
 
 .footnote[.red[*] bezieht sich auf das Core-OS ohne zusätzliche Repositories]
 
@@ -104,7 +104,7 @@ class: small
 
 .left-column[
 
-- Linux ist für viele Entwickler:innen eine zu komplexe Plattform:
+- Linux ist für viele Entwickler:innen eine **zu komplexe** Plattform:
   - Die Auswahl an Linux-Distributionen ist groß
   - Zahlreiche Paket-Manager
   - Es gibt zu unterschiedliche Versionsstände

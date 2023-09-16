@@ -16,7 +16,7 @@ name: appimage
   - analog zu `.exe`, `.dmg` und PortableApps
 - SquashFS-Format.red[*], keine Sandbox-Umgebung
 - keine Rechteverwaltung
-- ca. **1.300** Anwendungen im zentralen [AppImageHub](https://appimage.github.io/apps/)
+- ca. **1.400** Anwendungen im zentralen [AppImageHub](https://appimage.github.io/apps/)
 
 .footnote[.red[*] v2, v1 [nutzte ISO](https://discourse.appimage.org/t/alter-appimage-v1-convert-to-v2/2546/2)]
 
@@ -40,7 +40,7 @@ name: appimage
 
 Heruntergeladene Datei ausführbar machen und starten:
 
-```shell
+```command
 $ chmod u+x DogeApp.AppImage
 $ ./DogeApp.AppImage
 ```
@@ -97,7 +97,7 @@ class: small, center, middle
 
 ## Anatomie eines AppImages
 
-```shell
+```command
 HannahMontanaApp.AppDir/                    # Anwendungsverzeichnis
 HannahMontanaApp.AppDir/AppRun              # Start-Skript/-Programm
 HannahMontanaApp.AppDir/myapp.desktop       # Desktopverknüpfung
@@ -197,7 +197,7 @@ script:
 
 Konvertieren des Pakets:
 
-```shell
+```command
 $ pkg2appimage zdoom.yml
 ...
 Embedding ELF...
@@ -224,7 +224,7 @@ class: small
 
 Entpacken einer Debian-Datei, Erstellen der Ordnerstruktur:
 
-```shell
+```command
 $ mkdir leafpad ; cd $_
 $ curl -O http://ftp.de.debian.org/debian/pool/main/l/leafpad/leafpad_0.8.18.1-5_amd64.deb
 $ mkdir leafpad.AppDir ; cd $_
@@ -250,7 +250,7 @@ $ tree
 
 Erstellen des Abbilds:
 
-```shell
+```command
 $ cd ..
 $ appimagetool leafpad.AppDir
 appimagetool, continuous build (commit 729a1a6), build <local dev build> built on 2022-08-03 00:24:06 UTC
