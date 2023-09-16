@@ -121,7 +121,7 @@ Erstellen der Anwendung und des Manifests:
 
 ```shell
 #!/bin/sh
-echo "Ohai FrOSCon"
+echo "Ohai Kielux"
 ```
 
 ---
@@ -212,7 +212,7 @@ Pruning cache
 
 ```command
 $ flatpak run org.flatpak.Hello
-Ohai FrOSCon
+Ohai Kielux
 ```
 
 ---
@@ -235,5 +235,5 @@ $ flatpak --user remote-add --no-gpg-verify tutorial-repo repo
 $ flatpak --user install tutorial-repo org.flatpak.Hello
 Installation complete.
 $ flatpak run org.flatpak.Hello 
-Ohai FrOSCon
+Ohai Kielux
 ```
